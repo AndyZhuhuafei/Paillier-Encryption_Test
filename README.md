@@ -24,7 +24,7 @@ command:
 ### HCS Library 
 Secondly, this implementation also uses libhcs , a C library implementing a number of partially homormophic encryption
 schemes. 
-The auto-generated documentation for **libhcs** can be found [here](https://tiehuis.github.io/libhcs).
+The auto-generated documentation and source code for **libhcs** by [tiehuis](https://github.com/tiehuis) can be found [here](https://tiehuis.github.io/libhcs).
 Currently the following are implemented:
 
 * Paillier
