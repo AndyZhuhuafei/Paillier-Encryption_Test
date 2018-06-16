@@ -26,8 +26,8 @@
       <file leaf-file-name="main.c" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/main.c">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1153">
-              <caret line="77" column="2" lean-forward="true" selection-start-line="77" selection-start-column="2" selection-end-line="77" selection-end-column="2" />
+            <state relative-caret-position="-1714">
+              <caret line="20" column="33" lean-forward="true" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
               <folding>
                 <element signature="e#746#764#0" expanded="true" />
                 <element signature="e#691#710#0" expanded="true" />
@@ -62,6 +62,9 @@
       <find>mpz_init</find>
     </findStrings>
   </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
@@ -84,6 +87,7 @@
     <option name="width" value="814" />
     <option name="height" value="810" />
   </component>
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
   <component name="ProjectView">
     <navigator proportions="" version="1">
       <foldersAlwaysOnTop value="true" />
@@ -142,22 +146,21 @@
       <updated>1528034528508</updated>
       <workItem from="1528034530297" duration="56000" />
       <workItem from="1528825646825" duration="30000" />
-      <workItem from="1529057631358" duration="9090000" />
+      <workItem from="1529057631358" duration="9332000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="9176000" />
+    <option name="totallyTimeSpent" value="9418000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="618" y="27" width="814" height="810" extended-state="0" />
-    <editor active="true" />
     <layout>
       <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.19041614" />
       <window_info anchor="bottom" id="TODO" order="6" />
       <window_info anchor="bottom" id="CMake" order="7" />
       <window_info anchor="bottom" id="Event Log" order="7" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="7" show_stripe_button="false" />
+      <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Run" order="2" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.32959327" />
@@ -214,8 +217,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/main.c">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1153">
-          <caret line="77" column="2" lean-forward="true" selection-start-line="77" selection-start-column="2" selection-end-line="77" selection-end-column="2" />
+        <state relative-caret-position="-1714">
+          <caret line="20" column="33" lean-forward="true" selection-start-line="20" selection-start-column="33" selection-end-line="20" selection-end-column="33" />
           <folding>
             <element signature="e#746#764#0" expanded="true" />
             <element signature="e#691#710#0" expanded="true" />
