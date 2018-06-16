@@ -51,34 +51,22 @@ To uninstall all installed files, one can run the following command:
 #include <libhcs.h>
 #include <gmp.h>
 
-#ifdef HAVE_DLOPEN
-
-#if !defined(HAVE_GETHOSTBYADDR_R) || !defined(HAVE_SOLARIS_STYLE_GETHOST)
-static pthread_mutex_t LOCK_hostname;
-#endif
-
-#endif /* HAVE_DLOPEN */
-
-
 /*
  * Mark : Declaration of keys and global variables
- *
  */
 
-struct CryptoKey {
+struct CryptoKey {	// a structure definition to store Cryptosystem Key
     pcs_public_key *pubKey;
     pcs_private_key *privKey;
     hcs_random *hcsRandom;
 };
 
-mpz_t e_balanceSum;
+mpz_t e_balanceSum; // global variable for saving encrypted Sum of all balance
 
-int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9 ,10, 11, 12, 13, 14, 15, 16 ,17 ,18, 19};
-
+int arr[] = {1, 2, 3, 4, 5, 6, 7, 8, 9 ,10, 11, 12, 13, 14, 15, 16 ,17 ,18, 19}; // balance value for testing
 
 /*
  * Mark : Declaration of User-Defined Functions (UDF)
- *
  */
 
 void udf_init(struct CryptoKey** cryptoKey);
@@ -87,10 +75,8 @@ void udf_add(int i, struct CryptoKey** cryptoKey);
 //void udf_reset();
 
 
-
 /*
  * Mark : Definition of User-Defined Functions (UDF)
- *
  */
 
 void udf_init(struct CryptoKey** cryptoKey){
@@ -101,28 +87,19 @@ void udf_init(struct CryptoKey** cryptoKey){
     CSKeys->privKey = pcs_init_private_key();
     CSKeys->hcsRandom = hcs_init_random();
 
-
-    // Step 3 :
-    //  *cryptoKey = CSKeys
-    //  pcs_generate_key_pair((*cryptoKey)->pubKey, (*cryptoKey)->privKey, (*cryptoKey)->hcsRandom, 2048);
-
     pcs_generate_key_pair(CSKeys->pubKey, CSKeys->privKey, CSKeys->hcsRandom, 2048);
-
 
 // Step 2 :
     mpz_set_ui(e_balanceSum,0);
     gmp_printf("init e_balance to zero: %Zd", e_balanceSum);
     pcs_encrypt(CSKeys->pubKey, CSKeys->hcsRandom, e_balanceSum, e_balanceSum);
 
-
 // Step 3 :
     // *cryptoKey = (struct CryptoKey*)CSKeys
     *cryptoKey = CSKeys;
 }
 
-
 void udf_add(int i, struct CryptoKey** cryptoKey){
-
     int balance = arr[i];
 
 // Setup a 2048-bit for each balance
@@ -140,7 +117,6 @@ void udf_add(int i, struct CryptoKey** cryptoKey){
     mpz_clear(e_Balance);
 }
 
-
 int main(void){
 
 // Step 1 : Initialize crypto-system Key
@@ -149,17 +125,14 @@ int main(void){
 
     udf_init(&cryptoKey); // Initialize data structure using udf_init
 
-
 // Step 2 : Starts operation
     for(int i = 0; i<20; i++) {
         udf_add(i, &cryptoKey);
     }
 
-
 // Step 3 : Display operation results
         pcs_decrypt(cryptoKey->privKey, e_balanceSum, e_balanceSum);
         gmp_printf("Final Sum = %Zd\n", e_balanceSum);
-
 
 // Step 4 : Cleanup all Data and Key
     mpz_clear(e_balanceSum);
